@@ -1,5 +1,4 @@
 from plugin import InvenTreePlugin
-from plugin.base.template import PluginTemplateView
 from django.urls import path
 
 class MyUIView(PluginTemplateView):

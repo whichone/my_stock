@@ -6,7 +6,7 @@ class MyUIView(PluginTemplateView):
     title = "Mobile UI"
     icon = "fas fa-mobile-alt"
 
-class MyUIPlugin(InvenTreePlugin):
+class MyStock(InvenTreePlugin):
     NAME = "MyStock"
     TITLE = "Mobile UI"
     SLUG = "my_stock"

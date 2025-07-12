@@ -4,7 +4,7 @@ from .settings import MyStockSettings
 from .views import MyStockReactView
 
 
-class MyStockPlugin(InvenTreePlugin, AppMixin, SettingsMixin):
+class MyStock(InvenTreePlugin, AppMixin, SettingsMixin):
     NAME = "MyStock"
     TITLE = "Mobile UI"
     SLUG = "my_stock"

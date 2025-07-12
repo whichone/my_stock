@@ -1,7 +1,7 @@
 from plugin import InvenTreePlugin
 from plugin.mixins import AppMixin, SettingsMixin
-from .settings import MyStockSettings
-from .views import MyStockReactView
+#from .settings import MyStockSettings
+#from .views import MyStockReactView
 
 
 class MyStockPlugin(InvenTreePlugin, AppMixin, SettingsMixin):
@@ -13,6 +13,6 @@ class MyStockPlugin(InvenTreePlugin, AppMixin, SettingsMixin):
     DESCRIPTION = "React-based mobile UI plugin for InvenTree"
     SETTINGS = MyStockSettings
 
-    def setup(self):
+    #def setup(self):
         # Optional: Register custom React panels here
-        self.add_panel(MyStockReactView)
+        #self.add_panel(MyStockReactView)

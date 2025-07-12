@@ -5,7 +5,7 @@ from .views import MyStockReactView
 
 
 class MyStock(InvenTreePlugin, AppMixin, SettingsMixin):
-    NAME = "MyStock"
+    NAME = "my_stock"
     TITLE = "Mobile UI"
     SLUG = "my_stock"
     VERSION = "1.0"

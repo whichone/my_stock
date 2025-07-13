@@ -1,9 +1,9 @@
 from plugin import InvenTreePlugin
-from plugin.mixins import SettingsMixin, PanelMixin
+from plugin.mixins import SettingsMixin, PluginConfigMixin
 from .settings import MyStockSettings
 from .views import MyStockReactView
 
-class MinimalPlugin(PanelMixin, SettingsMixin, InvenTreePlugin):
+class MyStockPlugin(SettingsMixin, PluginConfigMixin, InvenTreePlugin):
     NAME = "my_stock"
     TITLE = "My Stock"
     DESCRIPTION = "A simple plugin that adds a custom admin panel"
@@ -13,4 +13,5 @@ class MinimalPlugin(PanelMixin, SettingsMixin, InvenTreePlugin):
 
     def setup(self):
         # Register the React view
+        print(">>> MinimalPlugin setup called")
         self.add_view(MyStockReactView)

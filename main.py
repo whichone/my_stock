@@ -1,3 +1,5 @@
+print("Loading my_stock plugin module...")
+
 from plugin import InvenTreePlugin
 from plugin.mixins.settings import SettingsMixin
 

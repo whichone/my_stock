@@ -1,5 +1,5 @@
 from plugin import InvenTreePlugin
-from plugin.mixins.settings import SettingsMixin
+from plugin.mixins import SettingsMixin
 
 class MinimalPlugin(SettingsMixin, InvenTreePlugin):
     NAME = "MyStock"

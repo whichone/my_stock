@@ -5,7 +5,7 @@ class MyPlugin(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
     NAME = "my_plugin"
     TITLE = "My Plugin"
     DESCRIPTION = "A plugin with settings and a basic UI"
-    VERSION = "0.1"
+    VERSION = "0.4"
 
     SETTINGS = {
         'ENABLED': {

@@ -5,7 +5,7 @@ class MyStock(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
     NAME = "my_stock"
     TITLE = "My Stock"
     DESCRIPTION = "A plugin with settings and a basic UI"
-    VERSION = "0.7"
+    VERSION = "0.6"
 
     SETTINGS = {
         'ENABLED': {
@@ -17,4 +17,5 @@ class MyStock(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
     }
 
     def get_user_interface_url(self):
+        # Return the entry file inside 'web' folder
         return "index.html"

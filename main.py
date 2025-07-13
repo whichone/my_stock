@@ -5,7 +5,7 @@ class MyStock(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
     NAME = "my_stock"
     TITLE = "My Stock"
     DESCRIPTION = "A plugin with settings and a basic UI"
-    VERSION = "0.5"
+    VERSION = "0.6"
 
     SETTINGS = {
         'ENABLED': {

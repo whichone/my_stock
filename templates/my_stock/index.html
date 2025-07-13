@@ -2,13 +2,11 @@
 
 {% block page_content %}
   <div class="container">
-    <h2>My Stock Frontend</h2>
-    <p>This is a custom admin panel for the <strong>MyStock</strong> plugin.</p>
-
-    {% if settings.API_ENABLE %}
-      <p>API functionality is <strong>enabled</strong>.</p>
-    {% else %}
-      <p>API functionality is <strong>disabled</strong>.</p>
-    {% endif %}
+    <h2>My Plugin UI</h2>
+    <p>This is a basic HTML page served by your plugin.</p>
+    <p>Plugin setting "ENABLED" is:
+      <strong>{{ settings.ENABLED }}</strong>
+    </p>
   </div>
 {% endblock %}
+

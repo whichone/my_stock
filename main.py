@@ -1,24 +1,28 @@
 from plugin import InvenTreePlugin
 from plugin.mixins import SettingsMixin
-from .views import MyStockAdminView
+from plugin.base.template import PluginTemplateView
+from plugin.mixins import PluginConfigMixin
 
-class MinimalPlugin(SettingsMixin, InvenTreePlugin):
-    NAME = "MyStock"
-    TITLE = "My Stock"
-    DESCRIPTION = "A simple plugin with settings"
-    VERSION = "0.3"
+class MyPluginFrontendView(PluginConfigMixin, PluginTemplateView):
+    template_name = "my_plugin/index.html"
+    view_name = "my_plugin_panel"
+    icon = "fa-plug"
+    title = "My Plugin Panel"
+
+class MyPlugin(SettingsMixin, InvenTreePlugin):
+    NAME = "my_plugin"
+    TITLE = "My Plugin"
+    DESCRIPTION = "Simple plugin with settings and a basic UI"
+    VERSION = "0.4"
 
     SETTINGS = {
-        'API_ENABLE': {
-            'name': 'API Functionality',
-            'description': 'Enable remote API queries',
+        'ENABLED': {
+            'name': 'Enable Feature',
+            'description': 'Enable something useful',
             'validator': bool,
             'default': True,
         }
     }
 
     def setup(self):
-        return [
-            MyStockAdminView,  # Adds your custom view to the plugin admin panel
-        ]
-
+        return [MyPluginFrontendView]

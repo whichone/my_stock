@@ -1,19 +1,11 @@
 from plugin import InvenTreePlugin
-from plugin.mixins import SettingsMixin
-from plugin.base.template import PluginTemplateView
-from plugin.mixins import PluginConfigMixin
+from plugin.mixins import SettingsMixin, UserInterfaceMixin
 
-class MyPluginFrontendView(PluginConfigMixin, PluginTemplateView):
-    template_name = "my_plugin/index.html"
-    view_name = "my_plugin_panel"
-    icon = "fa-plug"
-    title = "My Plugin Panel"
-
-class MyPlugin(SettingsMixin, InvenTreePlugin):
+class MyPlugin(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
     NAME = "my_plugin"
     TITLE = "My Plugin"
-    DESCRIPTION = "Simple plugin with settings and a basic UI"
-    VERSION = "0.4"
+    DESCRIPTION = "A plugin with settings and a basic UI"
+    VERSION = "0.1"
 
     SETTINGS = {
         'ENABLED': {
@@ -24,5 +16,5 @@ class MyPlugin(SettingsMixin, InvenTreePlugin):
         }
     }
 
-    def setup(self):
-        return [MyPluginFrontendView]
+    def get_user_interface_url(self):
+        return "index.html"

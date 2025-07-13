@@ -5,7 +5,7 @@ class MinimalPlugin(SettingsMixin, InvenTreePlugin):
     NAME = "MyStock"
     TITLE = "My Stock"
     DESCRIPTION = "A simple plugin with settings"
-    VERSION = "0.1"
+    VERSION = "0.2"
 
     SETTINGS = {
         'API_ENABLE': {

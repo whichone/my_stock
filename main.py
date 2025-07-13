@@ -3,7 +3,7 @@ from plugin.mixins import SettingsMixin, PluginConfigMixin
 from .settings import MyStockSettings
 from .views import MyStockReactView
 
-class MyStockPlugin(SettingsMixin, PluginConfigMixin, InvenTreePlugin):
+class MyStock(SettingsMixin, PluginConfigMixin, InvenTreePlugin):
     NAME = "my_stock"
     TITLE = "My Stock"
     DESCRIPTION = "A simple plugin that adds a custom admin panel"

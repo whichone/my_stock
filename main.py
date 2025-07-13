@@ -1,7 +1,7 @@
 from plugin import InvenTreePlugin
-from plugin.mixins import SettingsMixin, PluginConfigMixin
-from .settings import MyStockSettings
-from .views import MyStockReactView
+#from plugin.mixins import SettingsMixin, PluginConfigMixin
+#from .settings import MyStockSettings
+#from .views import MyStockReactView
 
 #class MyStock(SettingsMixin, PluginConfigMixin, InvenTreePlugin):
 class MyStock(InvenTreePlugin):

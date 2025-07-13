@@ -2,8 +2,8 @@ from plugin import InvenTreePlugin
 from plugin.mixins import SettingsMixin, UserInterfaceMixin
 
 class MyPlugin(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
-    NAME = "my_plugin"
-    TITLE = "My Plugin"
+    NAME = "my_stock"
+    TITLE = "My Stock"
     DESCRIPTION = "A plugin with settings and a basic UI"
     VERSION = "0.4"
 

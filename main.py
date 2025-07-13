@@ -4,7 +4,7 @@ from plugin import InvenTreePlugin
 #from .views import MyStockReactView
 
 #class MyStock(SettingsMixin, PluginConfigMixin, InvenTreePlugin):
-class MyStock(InvenTreePlugin):
+class MinimalPlugin(InvenTreePlugin):
     NAME = "my_stock"
     TITLE = "My Stock"
     DESCRIPTION = "A simple plugin that adds a custom admin panel"

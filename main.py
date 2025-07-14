@@ -1,6 +1,7 @@
 from plugin import InvenTreePlugin
 from plugin.mixins import SettingsMixin, UserInterfaceMixin
 
+
 class MyStock(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
     NAME = "my_stock"
     TITLE = "My Stock"

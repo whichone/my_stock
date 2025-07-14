@@ -1,4 +1,4 @@
-from inventree.plugin import InvenTreePlugin
+from plugin import InvenTreePlugin
 from plugin.mixins import SettingsMixin, UserInterfaceMixin
 
 

@@ -9,7 +9,7 @@ class MyPlugin(UserInterfaceMixin, InvenTreePlugin):
     NAME = "my_plugin"
     TITLE = "My Plugin"
     DESCRIPTION = "A minimal plugin with an interface tab"
-    VERSION = "0.1"
+    VERSION = "0.2"
 
     def get_custom_panels(self, request):
         return [

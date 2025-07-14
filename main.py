@@ -1,22 +1,28 @@
 from plugin import InvenTreePlugin
-from plugin.mixins import SettingsMixin, UserInterfaceMixin
+from plugin.mixins import UserInterfaceMixin
+from django.urls import path
+from django.http import HttpResponse
+from django.views import View
 
+class MyPlugin(UserInterfaceMixin, InvenTreePlugin):
+    NAME = "my_plugin"
+    TITLE = "My Plugin"
+    DESCRIPTION = "A minimal plugin with a built-in interface page"
+    VERSION = "0.1"
 
-class MyStock(SettingsMixin, UserInterfaceMixin, InvenTreePlugin):
-    NAME = "my_stock"
-    TITLE = "My Stock"
-    DESCRIPTION = "A plugin with settings and a basic UI"
-    VERSION = "0.7"
+    def get_custom_urls(self):
+        return [
+            path('interface/', self.InterfaceView.as_view(), name='my_plugin_interface'),
+        ]
 
-    SETTINGS = {
-        'ENABLED': {
-            'name': 'Enable Feature',
-            'description': 'Enable something useful',
-            'validator': bool,
-            'default': True,
-        }
-    }
-
-    def get_user_interface_url(self):
-        # Return the entry file inside 'web' folder
-        return "index.html"
+    class InterfaceView(View):
+        def get(self, request, *args, **kwargs):
+            return HttpResponse("""
+                <html>
+                    <head><title>My Plugin</title></head>
+                    <body style="font-family: sans-serif;">
+                        <h1>My Plugin Interface</h1>
+                        <p>This is a minimal plugin page.</p>
+                    </body>
+                </html>
+            """)

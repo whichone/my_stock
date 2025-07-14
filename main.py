@@ -3,12 +3,22 @@ from plugin.mixins import UserInterfaceMixin
 from django.urls import path
 from django.http import HttpResponse
 from django.views import View
+from django.utils.translation import gettext_lazy as _
 
 class MyPlugin(UserInterfaceMixin, InvenTreePlugin):
     NAME = "my_plugin"
     TITLE = "My Plugin"
-    DESCRIPTION = "A minimal plugin with a built-in interface page"
+    DESCRIPTION = "A minimal plugin with an interface tab"
     VERSION = "0.1"
+
+    def get_custom_panels(self, request):
+        return [
+            {
+                'title': _('My Tab'),
+                'icon': 'fas fa-puzzle-piece',
+                'url': 'my_plugin_interface',  # This must match the named URL below
+            }
+        ]
 
     def get_custom_urls(self):
         return [
@@ -18,11 +28,8 @@ class MyPlugin(UserInterfaceMixin, InvenTreePlugin):
     class InterfaceView(View):
         def get(self, request, *args, **kwargs):
             return HttpResponse("""
-                <html>
-                    <head><title>My Plugin</title></head>
-                    <body style="font-family: sans-serif;">
-                        <h1>My Plugin Interface</h1>
-                        <p>This is a minimal plugin page.</p>
-                    </body>
-                </html>
+                <div style="padding: 1em; font-family: sans-serif;">
+                    <h2>My Plugin Interface</h2>
+                    <p>This is a custom tab rendered inside the plugin page.</p>
+                </div>
             """)
